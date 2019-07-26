@@ -52,7 +52,7 @@ async fn main() {
         let items = items.clone();
         let completed = completed.clone();
 
-        rt.spawn(async move {
+        tokio::spawn(async move {
             let guard = items.get().await;
 
             println!("{:?}, {}", i, *guard);
